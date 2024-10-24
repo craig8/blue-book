@@ -6,15 +6,31 @@ title: Tags
 
 
 
+## <span class="tag">docs</span>
+
+  * [Creation of a docs site](docs-site.md)
+
+ 
+
+
 ## <span class="tag">documentation</span>
 
-  * [Welcome](index.md)
+  * [Craig's Bluebook of Fun](index.md)
+
+  * [Creation of a docs site](docs-site.md)
+
+ 
+
+
+## <span class="tag">python-libraries</span>
+
+  * [Creation of a docs site](docs-site.md)
 
  
 
 
 ## <span class="tag">unimportant</span>
 
-  * [Welcome](index.md)
+  * [Craig's Bluebook of Fun](index.md)
 
  
