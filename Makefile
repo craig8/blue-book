@@ -60,7 +60,7 @@ format:
 	@echo "- Running formatters -"
 	@echo "----------------------"
 
-	@bash .scripts/footer.sh
+#	@bash .scripts/footer.sh
 
 	@echo ""
 
