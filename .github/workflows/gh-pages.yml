@@ -43,10 +43,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add pdm.lock
+          git add poetry.lock
           git add .
           git diff-index --quiet HEAD \
-            || git commit -m "chore: update dependency, publish newsletters and add the not by ai badge"
+            || git commit -m "chore: update dependency, publish newsletters"
 
       - name: Make the site
         run: make build-docs
