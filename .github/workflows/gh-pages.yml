@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
+        #with:
           # Number of commits to fetch. 0 indicates all history.
           # Default: 1
           # fetch-depth: 0
