@@ -1,0 +1,3 @@
+[submodule "mkdocs-plugin-tags"]
+	path = mkdocs-plugin-tags
+	url = https://github.com/jldiaz/mkdocs-plugin-tags

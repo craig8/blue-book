@@ -1,0 +1,6 @@
+site_name: Craig's Blue Book Mind Dump
+theme:
+  name: zettelkasten-solarized-light
+plugins:
+- tags
+- zettelkasten
