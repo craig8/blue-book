@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Creation of a docs site - Craig's Blue Book Mind Dump</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../css/codehilite.css" rel="stylesheet">
+        <link href="../css/solarized-light.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Craig's Blue Book Mind Dump</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Craig's Bluebook of Fun</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Creation of a docs site</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../tags.html" class="nav-link">Tags</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                          <a href="../tags.html" class="nav-link">
+                            <i class="fa fa-tags"></i> Tags
+                          </a>
+                        </li>
+
+                      <!---->
+                        <!---->
+                      <!---->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-md-8">
+              <div class="zettel">
+    
+    <div class="file-header">
+      <div class="row align-items-center">
+        <div class="col-8">
+          
+        </div>
+        <div class="col-4 text-right date">
+              <span>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+              </span>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="file-body">
+      <h1 id="building-a-docs-site">Building a Docs Site</h1>
+<p>Let's be real without information the world doesn't move anywhere.  And the faster you find and
+are able to deal with that information (and remember) the better things will be for you.  At least
+that's what I am telling myself!</p>
+<p>Anyways, the docs site (not just code documentation) has become a great place to store the things that
+you <strong>MIGHT</strong> want to look up later.  Hey no one knows the future right.  So rather than relying on
+your brain to <strong>remember</strong> it all, just have a single place to put that information so you can refresh
+your memory, or have AI look it up using your own GPT on your archive of information (AWESOME!).</p>
+<h2 id="the-docs-site">The Docs Site</h2>
+<p>This method has a couple of things that are required in order to do thw work, oh and by the way,
+we will be using python for this example.  We are going to be using poetry as our package manager 
+and python3.10 but more recent should work just fine.  In addition, I will be working on a linux based platform but
+windows should be just fine.  Our "docs" source is going to be mkdocs and by
+the end of this we will have a working GitHub site that has our docs available to be searched and have
+tagged environment that we can work from.</p>
+<ol>
+<li>
+<p>First things first, we need to have poetry installed in a virtual environment.  (Note if you have no idea what 
+   poetry is you can read about it <a href="https://python-poetry.org/">here</a>  My favorite way to install poetry is
+   to use the installer.  From you shell execute the following (Make sure you aren't in any virtual env at this point
+   one will be created for the poetry install itself)</p>
+<p><code>curl -sSL https://install.python-poetry.org | python3 -</code></p>
+</li>
+<li>
+<p>Next we need to have a place for our project files.  For me, I usually have repositories located in my home directory
+   <code>~/repos</code>  that way I can just cd whenever I open my shell. Once your shell is where your projects are located
+   we create a new project with poetry.  There will be a bunch of questions and answers you can use to build the project
+   "your" way, but I would just use the bare bones as we will update it soon.</p>
+<p><code>poetry init blue-book
+...</code></p>
+</li>
+<li>
+<p>In your shell, cd in to the blue-book (or your project directory).  This is your project folder that you will 
+   eventually upload to GitHub (oh you need a GitHub account and a repository as well).  We need to install a few 
+   dependencies.  For each of the dependencies you will use the following command:</p>
+<p><code>poetry add mkdocs</code></p>
+<p>Note mkdocs is the primary project for our system.</p>
+<ul>
+<li>proselint</li>
+<li>gitdb2 </li>
+<li>mkdocs-git-revision-date-localized-plugin</li>
+<li>mkdocs-minify-plugin</li>
+<li>mkdocs-section-index</li>
+<li>mkdocs-newsletter</li>
+<li>mkdocs-autolinks-plugin</li>
+<li>mkdocs-exclude-search</li>
+</ul>
+<p>Note I will do a deeper dive on each of these dependencies as I figure out how to configure them in my own words.</p>
+</li>
+<li>
+<p>Now that we have all of the dependencies set up we need to start our docs site.  To do this we use the following 
+   command which will create all the files that mkdocs needs to create it for you.</p>
+<p><strong>NOTE</strong> the '.' that is not there by mistake we want the docs site to be created in the root of the project.</p>
+<p><code>poetry run mkdocs new .</code></p>
+</li>
+<li>
+<p>Now we can simply run the following to have a default setup page that we can modify and make our own.  The 
+   program will tell you where you can direct your browser to see the default mkdocs and how to continue on.</p>
+<p><code>poetry run mkdocs serve</code> </p>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<p>Ok so this has gotten us up and going, but we have so much left to document.  But for now that's all I am going to 
+write.  Hopefully this helps someone.</p>
+    </div>
+    
+  </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Zettelkasten built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
