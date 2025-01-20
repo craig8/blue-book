@@ -26,7 +26,7 @@ mkdocs-zettelkasten = "^0.1.9"
 tags-macros-plugin = {path = "mkdocs-plugin-tags"}
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^4.0.1"
+pre-commit = "^4.1.0"
 
 [tool.yapfignore]
 ignore_patterns = [
