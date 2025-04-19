@@ -729,13 +729,13 @@ mkdocs = ">=1.2"
 
 [[package]]
 name = "mkdocs-zettelkasten"
-version = "0.1.9"
+version = "0.1.10"
 description = "Add Zettelkasten features to MkDocs"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mkdocs-zettelkasten-0.1.9.tar.gz", hash = "sha256:d6620209a94187fe4fb6249ca93818eb3b69c469e4137cc6cf8c81a26b9cbd5a"},
-    {file = "mkdocs_zettelkasten-0.1.9-py3-none-any.whl", hash = "sha256:5fa6d07ba546402fb0a77ef4eac66c95d37808d969fc50d67ac0f340c77b85f8"},
+    {file = "mkdocs_zettelkasten-0.1.10-py3-none-any.whl", hash = "sha256:ba79d29f7a63ce754f31309c950d33ae3fe2ca28a8f48752d1172f2a1d211fa6"},
+    {file = "mkdocs_zettelkasten-0.1.10.tar.gz", hash = "sha256:984b3f6133509b9347db991e969e2a1a9000ec76dd0ce484d81ff5de7bb4b7f6"},
 ]
 
 [package.dependencies]
