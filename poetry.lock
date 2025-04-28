@@ -767,14 +767,14 @@ mkdocs = ">=1.2"
 
 [[package]]
 name = "mkdocs-zettelkasten"
-version = "0.2.2"
+version = "0.3.1"
 description = "Add Zettelkasten features to MkDocs"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "mkdocs_zettelkasten-0.2.2-py3-none-any.whl", hash = "sha256:aa561ff8df6346b88adb9b096a0e6f916c0271d4319f1aa90cd56ea038134144"},
-    {file = "mkdocs_zettelkasten-0.2.2.tar.gz", hash = "sha256:841cc86dc61b807ed235058a418bc31657184cd81626991019a2d0860c5a4832"},
+    {file = "mkdocs_zettelkasten-0.3.1-py3-none-any.whl", hash = "sha256:0e88df06ec1a39aa1020412ce91bc177484cb188bf90cc0dd1c28e4c270b81f3"},
+    {file = "mkdocs_zettelkasten-0.3.1.tar.gz", hash = "sha256:ac3bf11bc6afaf3502c902aed9258a18666cf5f6ce07c5b4b1897ed4f9651bc9"},
 ]
 
 [package.dependencies]
@@ -782,6 +782,8 @@ gitpython = "3.1.44"
 jinja2 = "3.1.6"
 mkdocs = "1.6.1"
 pymdown-extensions = "10.14.3"
+PyYAML = "6.0.2"
+tzlocal = "5.3.1"
 
 [[package]]
 name = "nodeenv"
@@ -1303,6 +1305,37 @@ files = [
 ]
 
 [[package]]
+name = "tzdata"
+version = "2025.2"
+description = "Provider of IANA time zone data"
+optional = false
+python-versions = ">=2"
+groups = ["main"]
+markers = "platform_system == \"Windows\""
+files = [
+    {file = "tzdata-2025.2-py2.py3-none-any.whl", hash = "sha256:1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8"},
+    {file = "tzdata-2025.2.tar.gz", hash = "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"},
+]
+
+[[package]]
+name = "tzlocal"
+version = "5.3.1"
+description = "tzinfo object for the local timezone"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "tzlocal-5.3.1-py3-none-any.whl", hash = "sha256:eb1a66c3ef5847adf7a834f1be0800581b683b5608e74f86ecbcef8ab91bb85d"},
+    {file = "tzlocal-5.3.1.tar.gz", hash = "sha256:cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"},
+]
+
+[package.dependencies]
+tzdata = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+devenv = ["check-manifest", "pytest (>=4.3)", "pytest-cov", "pytest-mock (>=3.3)", "zest.releaser"]
+
+[[package]]
 name = "urllib3"
 version = "2.4.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -1387,4 +1420,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "11a608e58a0fe31142fdcfa39661ddbf3e70b440dbb6d921e457efad5929241c"
+content-hash = "e53e4748d597851646cafb4d1bb1692d8dc9ca5d703197180725bd691dce2960"
