@@ -211,6 +211,24 @@ files = [
 ]
 
 [[package]]
+name = "colorlog"
+version = "6.9.0"
+description = "Add colours to the output of Python's logging module."
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "colorlog-6.9.0-py3-none-any.whl", hash = "sha256:5906e71acd67cb07a71e779c47c4bcb45fb8c2993eebe9e5adcd6a6f1b283eff"},
+    {file = "colorlog-6.9.0.tar.gz", hash = "sha256:bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+development = ["black", "flake8", "mypy", "pytest", "types-colorama"]
+
+[[package]]
 name = "csscompressor"
 version = "0.9.5"
 description = "A python port of YUI CSS Compressor"
@@ -767,21 +785,24 @@ mkdocs = ">=1.2"
 
 [[package]]
 name = "mkdocs-zettelkasten"
-version = "0.2.2"
+version = "0.4.2"
 description = "Add Zettelkasten features to MkDocs"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "mkdocs_zettelkasten-0.2.2-py3-none-any.whl", hash = "sha256:aa561ff8df6346b88adb9b096a0e6f916c0271d4319f1aa90cd56ea038134144"},
-    {file = "mkdocs_zettelkasten-0.2.2.tar.gz", hash = "sha256:841cc86dc61b807ed235058a418bc31657184cd81626991019a2d0860c5a4832"},
+    {file = "mkdocs_zettelkasten-0.4.2-py3-none-any.whl", hash = "sha256:55f4d5b4b9f3797dde70c444f6e1d22313e8236cc97ce86dfdb47d762aba2393"},
+    {file = "mkdocs_zettelkasten-0.4.2.tar.gz", hash = "sha256:29861434ec0a32c9dac858f8914372dc8c8d064d814b8ce45c0bfc5d28f74870"},
 ]
 
 [package.dependencies]
+colorlog = "6.9.0"
 gitpython = "3.1.44"
 jinja2 = "3.1.6"
 mkdocs = "1.6.1"
-pymdown-extensions = "10.14.3"
+pymdown-extensions = "10.15"
+PyYAML = "6.0.2"
+tzlocal = "5.3.1"
 
 [[package]]
 name = "nodeenv"
@@ -982,14 +1003,14 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pymdown-extensions"
-version = "10.14.3"
+version = "10.15"
 description = "Extension pack for Python Markdown."
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "pymdown_extensions-10.14.3-py3-none-any.whl", hash = "sha256:05e0bee73d64b9c71a4ae17c72abc2f700e8bc8403755a00580b49a4e9f189e9"},
-    {file = "pymdown_extensions-10.14.3.tar.gz", hash = "sha256:41e576ce3f5d650be59e900e4ceff231e0aed2a88cf30acaee41e02f063a061b"},
+    {file = "pymdown_extensions-10.15-py3-none-any.whl", hash = "sha256:46e99bb272612b0de3b7e7caf6da8dd5f4ca5212c0b273feb9304e236c484e5f"},
+    {file = "pymdown_extensions-10.15.tar.gz", hash = "sha256:0e5994e32155f4b03504f939e501b981d306daf7ec2aa1cd2eb6bd300784f8f7"},
 ]
 
 [package.dependencies]
@@ -1303,6 +1324,37 @@ files = [
 ]
 
 [[package]]
+name = "tzdata"
+version = "2025.2"
+description = "Provider of IANA time zone data"
+optional = false
+python-versions = ">=2"
+groups = ["main"]
+markers = "platform_system == \"Windows\""
+files = [
+    {file = "tzdata-2025.2-py2.py3-none-any.whl", hash = "sha256:1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8"},
+    {file = "tzdata-2025.2.tar.gz", hash = "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"},
+]
+
+[[package]]
+name = "tzlocal"
+version = "5.3.1"
+description = "tzinfo object for the local timezone"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "tzlocal-5.3.1-py3-none-any.whl", hash = "sha256:eb1a66c3ef5847adf7a834f1be0800581b683b5608e74f86ecbcef8ab91bb85d"},
+    {file = "tzlocal-5.3.1.tar.gz", hash = "sha256:cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"},
+]
+
+[package.dependencies]
+tzdata = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+devenv = ["check-manifest", "pytest (>=4.3)", "pytest-cov", "pytest-mock (>=3.3)", "zest.releaser"]
+
+[[package]]
 name = "urllib3"
 version = "2.4.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -1387,4 +1439,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "11a608e58a0fe31142fdcfa39661ddbf3e70b440dbb6d921e457efad5929241c"
+content-hash = "40d14c5ea4201d8c7ef72e8c5505a33a0d4f4773af7b6b4b5184fab47ae2d389"
